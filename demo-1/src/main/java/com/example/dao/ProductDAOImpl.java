@@ -38,5 +38,34 @@ public class ProductDAOImpl implements ProductDAO {
 		 session.save(product);
 		 return product;
 	}
+	@Override
+	@Transactional
+	public Product getProductById(int productId) {
+		// TODO Auto-generated method stub
+		Session session=entityManager.unwrap(Session.class);
+		return session.get(Product.class, productId);
+	}
+	@Override
+	@Transactional
+	public void removeProduct(int productId) {
+		Session session=entityManager.unwrap(Session.class);
+		Product product=session.get(Product.class, productId);
+		session.delete(product);
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

@@ -17,13 +17,22 @@ public class ProductServiceImpl implements ProductService {
 	}
 	@Override
 	public List<Product> getAllProduct() {
-		// TODO Auto-generated method stub
+		
 		return productDAO.getAllProduct();
 	}
 	@Override
 	public Product createProduct(Product product) {
-		// TODO Auto-generated method stub
+		
 		return productDAO.createProduct(product);
+	}
+	@Override
+	public Product getProductById(int productId) {
+		
+		return productDAO.getProductById(productId);
+	}
+	@Override
+	public void removeProduct(int productId) {
+		productDAO.removeProduct(productId);
 	}
 
 }
