@@ -19,12 +19,12 @@ public class Product {
 	@Column(name = "product_id")
 	private int productId;
 	@Column(name = "product_type")
-	@Enumerated(EnumType.STRING)
-	private ProductType productType;
+	//@Enumerated(EnumType.STRING)
+	private String productType;
 	@Column(name = "product_price")
 	private double productPrice;
 	
-	public Product(ProductType productType, double productPrice) {
+	public Product(String productType, double productPrice) {
 		super();
 		this.productType = productType;
 		this.productPrice = productPrice;

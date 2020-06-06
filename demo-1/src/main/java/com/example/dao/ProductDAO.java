@@ -6,6 +6,6 @@ import com.example.model.Product;
 
 public interface ProductDAO {
 	public List<Product> getAllProduct();
-	public void createProduct(Product product);
+	public Product createProduct(Product product);
 
 }

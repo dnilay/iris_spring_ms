@@ -1,5 +1,4 @@
 package com.example.dao;
-
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -33,10 +32,11 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 	@Override
 	@Transactional
-	public void createProduct(Product product) {
+	public Product createProduct(Product product) {
 		// TODO Auto-generated method stub
 		Session session=entityManager.unwrap(Session.class);
 		 session.save(product);
+		 return product;
 	}
 
 }

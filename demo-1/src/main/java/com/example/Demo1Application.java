@@ -27,9 +27,9 @@ public class Demo1Application implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 
-		Product product1=new Product(ProductType.BOOK,80);
-		Product product2=new Product(ProductType.ELECTRONICS, 280);
-		Product product3=new Product(ProductType.COSMETICS, 10);
+		Product product1=new Product("BOOK",80);
+		Product product2=new Product("ELECTRONICS", 280);
+		Product product3=new Product("COSMETICS", 10);
 		productDAO.createProduct(product1);
 		productDAO.createProduct(product2);
 		productDAO.createProduct(product3);
