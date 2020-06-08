@@ -10,8 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-//@EnableFeignClients
-//@EnableCircuitBreaker
 public class PhotoAppApiUsersApplication {
 
 	@Autowired

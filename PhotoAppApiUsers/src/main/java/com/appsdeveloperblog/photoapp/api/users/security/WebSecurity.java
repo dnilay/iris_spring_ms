@@ -6,29 +6,24 @@ import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import com.appsdeveloperblog.photoapp.api.users.service.UsersService;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
 	private Environment environment;
-	private UsersService usersService;
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Autowired
-	public WebSecurity(Environment environment, UsersService usersService, BCryptPasswordEncoder bCryptPasswordEncoder) {
+	public WebSecurity(Environment environment) {
+		super();
 		this.environment = environment;
-		this.usersService = usersService;
-		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/**").hasIpAddress(environment.getProperty("gateway.ip"));
+		http.authorizeRequests().antMatchers("/users/**").permitAll();
+		//.hasIpAddress("127.0.0.1");
 	}
 
 }

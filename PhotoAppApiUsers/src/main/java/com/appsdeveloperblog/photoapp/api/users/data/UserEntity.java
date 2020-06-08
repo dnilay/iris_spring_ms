@@ -3,6 +3,7 @@ package com.appsdeveloperblog.photoapp.api.users.data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,22 +12,22 @@ import javax.persistence.Table;
 public class UserEntity{
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column(nullable  = false, length = 50)
+	@Column(name = "first_name")
 	private String firstName;
 
-	@Column(nullable = false, length = 50)
+	@Column(name = "last_name")
 	private String lastName;
 
-	@Column(nullable = false, length = 120, unique = true)
+	
 	private String email;
 
-	@Column(nullable = false, unique = true)
+	@Column(name = "user_id")
 	private String userId;
 
-	@Column(nullable = false, unique = true)
+	@Column(name = "encrypted_password")
 	private String encryptedPassword;
 
 	public long getId() {
