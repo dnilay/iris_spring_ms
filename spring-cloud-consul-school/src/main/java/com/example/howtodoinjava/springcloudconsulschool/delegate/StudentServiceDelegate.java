@@ -27,7 +27,6 @@ public class StudentServiceDelegate {
 	}
 	
 	@Bean
-	@LoadBalanced
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
